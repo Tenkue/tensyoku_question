@@ -1,0 +1,2 @@
+class LearningMethod < ApplicationRecord
+end
