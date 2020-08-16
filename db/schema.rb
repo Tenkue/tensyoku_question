@@ -32,13 +32,17 @@ ActiveRecord::Schema.define(version: 2020_08_15_004358) do
     t.string "nickname", null: false
     t.string "image"
     t.string "encrypted_password", default: "", null: false
-    t.integer "language_id"
-    t.integer "work_method_id"
+    t.bigint "language_id"
+    t.bigint "learning_method_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_users_on_language_id"
+    t.index ["learning_method_id"], name: "index_users_on_learning_method_id"
   end
 
+  add_foreign_key "users", "languages"
+  add_foreign_key "users", "learning_methods"
 end

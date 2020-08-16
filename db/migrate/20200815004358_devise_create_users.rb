@@ -8,8 +8,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :nickname, null: false
       t.string :image
       t.string :encrypted_password, null: false, default: ""
-      t.references :language_id, foreign_key: true
-      t.references :learning_method_id, foreign_key: true
+      t.references :language, foreign_key: true
+      t.references :learning_method, foreign_key: true
 
       ## Recoverable
       t.string   :reset_password_token
