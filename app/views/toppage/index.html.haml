@@ -4,11 +4,11 @@
       .info_logo
         = image_tag 'logo.jpg', class: "info_logo_image"
       .info_name
-        こんにちは、〇〇〇〇〇〇〇〇 さん
+        こんにちは、#{current_user.nickname}さん
     %ul
-      %li 新規投稿
-      %li マイページ
-      %li ログアウト
+      = link_to "新規登録", new_user_session_path
+      = link_to "マイページ"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete 
   .main
     .select
       .select_content

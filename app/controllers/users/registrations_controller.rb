@@ -8,7 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.new
     @language = @user.build_language
-    @learning_method = @user.build_learningmethod
+    @learning_method = @user.build_learning_method
   end
 
   # POST /resource
@@ -61,4 +61,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  def after_sign_up_path_for(resource)
+    toppage_index_path
+  end
 end
