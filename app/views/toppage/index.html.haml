@@ -3,12 +3,16 @@
     .info
       .info_logo
         = image_tag 'logo.jpg', class: "info_logo_image"
-      .info_name
-        こんにちは、〇〇〇〇〇〇〇〇 さん
+      - if user_signed_in?
+        .info_name
+          こんにちは、#{current_user.nickname}さん
     %ul
-      %li 新規投稿
-      %li マイページ
-      %li ログアウト
+      = link_to "マイページ"
+      - if user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete 
+      - else
+        = link_to "新規登録", new_user_session_path
+        
   .main
     .select
       .select_content
