@@ -7,9 +7,12 @@
         .info_name
           こんにちは、#{current_user.nickname}さん
     %ul
-      = link_to "新規登録", new_user_session_path
       = link_to "マイページ"
-      = link_to "ログアウト", destroy_user_session_path, method: :delete 
+      - if user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete 
+      - else
+        = link_to "新規登録", new_user_session_path
+        
   .main
     .select
       .select_content
