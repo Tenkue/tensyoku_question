@@ -9,7 +9,6 @@
           = render "devise/shared/error_messages", resource: resource
           .field
             = f.label :nickname, class: "field_name"
-            %br/
             = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field_text"
           .field
             = f.label :password, class: "field_name"
