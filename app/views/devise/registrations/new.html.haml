@@ -31,6 +31,9 @@
               = f.label :method, class: "field_name"
               %br/
               = f.text_field :method, class: "field_text"
+          .field
+            アイコン(仮置き)
           .actions
-            = f.submit "Sign up"
-        = render "devise/shared/links"
+            = f.submit "Sign up", class: "actions_btn"
+        .devise_content_form_links
+          = render "devise/shared/links"
