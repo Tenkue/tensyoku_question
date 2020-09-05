@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# プログラミング言語追加
+Language.create!([
+  {programing_language: 'HTML'},
+  {programing_language: 'CSS'},
+  {programing_language: 'JavaScript'},
+  {programing_language: 'Ruby'},
+  {programing_language: 'PHP'},
+  {programing_language: 'Python'},
+  {programing_language: 'Java'}
+])
+# 学習方法追加
+LearningMethod.create!([
+  {method: 'スクール（TECH::CAMP）'},
+  {method: 'スクール（Code Camp）'},
+  {method: 'スクール（TechAcademy）'},
+  {method: 'スクール（TECH BOOST）'},
+  {method: 'スクール（POTEPAN CAMP）'},
+  {method: 'スクール（DIVE INTO CODE）'},
+  {method: 'スクール（侍エンジニア塾）'},
+  {method: 'スクール（その他）'},
+  {method: '独学'},
+])
