@@ -20,3 +20,12 @@ LearningMethod.create!([
   {method: 'スクール（その他）'},
   {method: '独学'},
 ])
+
+# テストユーザー作成
+User.create!(
+  nickname: 'test-user',
+  password: 'password',
+  password_confirmation: 'password',
+  language_id: '4',
+  learning_method_id:'1'
+)
