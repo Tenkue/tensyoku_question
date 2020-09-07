@@ -5,7 +5,7 @@
     .devise_content
       %h2 Sign up
       .devise_content_form
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = form_with(model: @user, url: registration_path(resource_name)) do |f|
           = render "devise/shared/error_messages", resource: resource
           .field
             = f.label :nickname, class: "field_name"
