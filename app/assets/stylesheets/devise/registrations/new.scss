@@ -1,65 +1,64 @@
 .main {
   .devise_content{
+    margin: 0 auto;
+    margin-top: 50px;
     height: 650px;
     width: 700px;
     background-color: #fafafa;
-    margin: 0 auto;
-    margin-top: 50px;
     h2{
       padding-top: 30px;
       padding-bottom: 30px;
+      font-weight: bold;
       text-align: center;
       font-size: 40px;
-      font-weight: bold;
     }
     &_form {
       margin: 0 auto;
       height: 450px;
       width: 600px;
-      // background-color: grey;
       .field {
+        display: flex;
         margin-top: 10px;
         margin-bottom: 10px;
-        display: flex;
         align-items: center;
         &_name{
-          font-size: 15px;
-          font-weight: bold;
           padding-left: 5px;
-          color: #444444;
           padding-right: 50px;
           width: 140px;
+          font-size: 15px;
+          font-weight: bold;
+          color: #444444;
         }
         &_text {
           margin-top: 10px;
           margin-bottom: 10px;
           padding: 5px 10px;
+          height: 30px;
+          width: 370px; 
           background: #fafafa;
           border: none;
           border: 2px solid #e9e9e9;
+          border-radius:10px;
+          transition: border-color 0.3s;
           color: #666;
           font-family: 'Open Sans', sans-serif;
           font-size: 1em;
-          height: 30px;
-          transition: border-color 0.3s;
-          width: 370px; 
-          border-radius:10px;
         }
       }
       .actions {
         padding-top: 30px;
         text-align: center;
         &_btn {
+          height: 45px;
+          width: 200px;
           border: 2px solid #4d639f;
           border-radius: 0;
           background: #fff;
-          height: 45px;
-          width: 200px;
           font-size: 15px;
           font-weight: bold;
           &:hover {
-            color: #fff;
             background: #4d639f;
+            color: #fff;
           }
         }
       }
