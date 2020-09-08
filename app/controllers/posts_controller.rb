@@ -2,15 +2,11 @@ class PostsController < ApplicationController
   #新規投稿
   def new
     @post = Post.new
-    # @post.build_style
-    # @post.build_place
-    # @questions = Question.all
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = Post.new(post_params)
     if @post.save
-      puts '投稿しました'
       redirect_to root_path
     else
       render :new
@@ -35,10 +31,6 @@ class PostsController < ApplicationController
       :user_id,
       :place_id,
       :style_id,
-      # style_attributes: [:id,
-      #                    :business_form],
-      # place_attributes: [:id,
-      #                    :work_location],
-      question_ids: [])
+      question_ids: []).merge(user_id: current_user.id)
   end
 end
