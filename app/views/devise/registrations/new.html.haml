@@ -21,16 +21,14 @@
             = f.label :password_confirmation, class: "field_name"
             %br/
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "field_text"
-          = f.fields_for :language do |f|
-            .field
-              = f.label :programing_language, class: "field_name"
-              %br/
-              = f.text_field :programing_language, class: "field_text"
-          = f.fields_for :learning_method do |f|
-            .field
-              = f.label :method, class: "field_name"
-              %br/
-              = f.text_field :method, class: "field_text"
+          .field
+            = f.label :programing_language, class: "field_name"
+            %br/
+            = f.collection_select :language_id, Language.all, :id, :programing_language, :include_blank => true, class: "field_text"
+          .field
+            = f.label :method, class: "field_name"
+            %br/
+            = f.collection_select :learning_method_id, LearningMethod.all, :id, :method, :include_blank => true, class: "field_text"
           .field
             アイコン(仮置き)
           .actions
