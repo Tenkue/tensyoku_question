@@ -1,9 +1,9 @@
 .main {
   .devise_content{
     margin: 0 auto;
-    margin-top: 50px;
-    height: 650px;
-    width: 700px;
+    margin-top: 35px;
+    height: auto;
+    width: 50%;
     background-color: #fafafa;
     h2{
       padding-top: 30px;
@@ -14,8 +14,9 @@
     }
     &_form {
       margin: 0 auto;
-      height: 450px;
+      height: auto;
       width: 600px;
+      padding: 30px;
       .field {
         display: flex;
         margin-top: 10px;

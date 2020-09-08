@@ -1,17 +1,23 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+%body
+  %header
+    -# 後日、topページで使用しているヘッダー部分を部分テンプレート化してはめ込みます
+  .main
+    .devise_content
+      %h2 Log in
+      .devise_content_form
+        = form_with( model:@user, url: session_path(resource_name)) do |f|
+          .field
+            = f.label :nickname, class: "field_name"
+            %br/
+            = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field_text"
+          .field
+            = f.label :password, class: "field_name"
+            %br/
+            = f.password_field :password, autocomplete: "current-password", class: "field_text"
+          - if devise_mapping.rememberable?
+            .field
+              = f.check_box :remember_me, class: "check_box"
+              = f.label :remember_me, class: "field_name"
+          .actions
+            = f.submit "Log in", class: "actions_btn"
+        = render "devise/shared/links"
