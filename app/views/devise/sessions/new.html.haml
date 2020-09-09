@@ -15,9 +15,10 @@
             %br/
             = f.password_field :password, autocomplete: "current-password", class: "field_text"
           - if devise_mapping.rememberable?
-            .field
+            .field_check
               = f.check_box :remember_me, class: "check_box"
-              = f.label :remember_me, class: "field_name"
+              = f.label :remember_me, class: "check_name"
           .actions
             = f.submit "Log in", class: "actions_btn"
-        = render "devise/shared/links"
+        .devise_content_form_links_singin
+          = render "devise/shared/links"

@@ -2,4 +2,11 @@
   color: #444444;
   text-decoration: none;
   font-weight: bold;
+  line-height: 0.5em
+}
+
+br {
+  content: "";
+  display: block;
+  margin: 15px;
 }
