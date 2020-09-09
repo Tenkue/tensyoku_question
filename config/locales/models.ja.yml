@@ -6,7 +6,5 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: 確認用パスワード
-      language:
         programing_language: 学習言語
-      learning_method:
         method: 学習方法
