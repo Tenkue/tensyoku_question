@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
     added_attrs = [ :nickname,
       :password,
       :password_confirmation,
-      language_attributes: [:programing_language] ,
-      learning_method_attributes: [:method]
+      :programing_language_id ,
+      :learning_method_id
     ]
     devise_parameter_sanitizer.permit(:sign_up, keys: added_attrs)
     devise_parameter_sanitizer.permit(:sign_in, keys: added_attrs)
