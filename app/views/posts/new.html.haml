@@ -13,5 +13,8 @@
     = f.label :質問内容
     = f.collection_check_boxes(:question_ids, Question.all, :id, :content, include_hidden: false) do |q|
       = q.label { q.check_box + q.text }
+  %div
+    = f.label :コメント
+    = f.text_field :text
   %div.submit
     = f.submit
