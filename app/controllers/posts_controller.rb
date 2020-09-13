@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(
       :interview_date,
+      :text,
       :user_id,
       :place_id,
       :style_id,
