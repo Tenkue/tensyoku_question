@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show,:destroy]
   #新規投稿
   def new
     @post = Post.new
@@ -26,6 +26,9 @@ class PostsController < ApplicationController
   end
 #投稿削除
   def destroy
+    @post.destroy
+    flash[:success] = '投稿を削除しました！'
+    redirect_to root_path
   end
 
   private
