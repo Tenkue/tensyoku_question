@@ -1,0 +1,19 @@
+= form_with model:@post, local: true do |f|
+  %div.style
+    = f.label :業務形態
+    = f.collection_select :style_id, Style.all, :id, :business_form, :include_blank => true
+  %div.post
+    = f.label :勤務地域
+    = f.collection_select :place_id, Place.all, :id, :work_location, :include_blank => true 
+  %div.date
+    = f.label :面接日
+    = f.date_field  :interview_date
+  %div
+    = f.label :質問内容
+    = f.collection_check_boxes(:question_ids, Question.all, :id, :content, include_hidden: false) do |q|
+      = q.label { q.check_box + q.text }
+  %div
+    = f.label :コメント
+    = f.text_field :text
+  %div.submit
+    = f.submit
