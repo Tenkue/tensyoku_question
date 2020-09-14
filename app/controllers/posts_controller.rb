@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show,:destroy]
+  before_action :set_post, only: [:show,:edit,:update,:destroy]
   #新規投稿
   def new
     @post = Post.new
@@ -23,6 +23,11 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update(post_params)
+      redirect_to  post_path(@post), notice:"投稿内容を編集しました！"
+    else
+      render :edit
+    end
   end
 #投稿削除
   def destroy
