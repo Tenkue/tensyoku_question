@@ -15,20 +15,18 @@
             - if @minimum_password_length
               %em
                 (#{@minimum_password_length} characters minimum)
-            %br/
             = f.password_field :password, autocomplete: "new-password", class: "field_text"
           .field
             = f.label :password_confirmation, class: "field_name"
-            %br/
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "field_text"
           .field
             = f.label :programing_language, class: "field_name"
-            %br/
-            = f.collection_select :language_id, Language.all, :id, :programing_language, :include_blank => true, class: "field_text"
+            .field_checkbox
+              = f.collection_check_boxes :language_id, Language.all, :id, :programing_language, :include_blank => true
           .field
             = f.label :method, class: "field_name"
-            %br/
-            = f.collection_select :learning_method_id, LearningMethod.all, :id, :method, :include_blank => true, class: "field_text"
+            .field_selectbox
+              = f.collection_select :learning_method_id, LearningMethod.all, :id, :method, :include_blank => true
           .field
             アイコン(仮置き)
           .actions
