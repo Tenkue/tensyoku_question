@@ -1,0 +1,19 @@
+%h1 投稿一覧
+%br/
+
+- @posts.each do |post|
+  %h2 投稿日:
+  = post.interview_date
+  %br/
+
+  %h2 業務形態
+  = post.style.business_form
+  %br/
+
+  %h2 勤務地域
+  = post.place.work_location
+  %br/
+
+  - post.questions.each do |question|
+    %li
+      = question.content
