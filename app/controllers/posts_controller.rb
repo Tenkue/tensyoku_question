@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show,:edit,:update,:destroy]
+  #登校一覧
+  def index
+    @posts = Post.all
+  end
   #新規投稿
   def new
     @post = Post.new
