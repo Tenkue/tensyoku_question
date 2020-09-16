@@ -50,9 +50,10 @@ header {
 
 .main {
   background-color: #c9ced1;
-  height: calc( 100vh - 130px );
+  min-height:100vh;
   width: 100%;
   padding-top: 130px;
+  padding-bottom: 100px;
   .select {
     width: 550px;
     height: 100px;

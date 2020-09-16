@@ -17,8 +17,11 @@
             = f.date_field  :interview_date, class: "field_date"
           .field
             = f.label :質問内容, class: "field_name"
-            = f.collection_check_boxes(:question_ids, Question.all, :id, :content, include_hidden: false) do |q|
-              = q.label { q.check_box + q.text }
+            .field_question
+              = f.collection_check_boxes(:question_ids, Question.all, :id, :content, include_hidden: false) do |q|
+                .field_question_answer
+                  = q.check_box
+                  = q.label{ q.text }
           .field
             = f.label :コメント, class: "field_name"
             = f.text_field :text
