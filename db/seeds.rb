@@ -26,8 +26,25 @@ User.create!(
   nickname: 'test-user',
   password: 'password',
   password_confirmation: 'password',
-  language_id: '4',
   learning_method_id:'1'
+)
+
+#テストユーザーの中間テーブルを作成
+UserLanguage.create!(
+  user_id: '1',
+  language_id: '1'
+)
+UserLanguage.create!(
+  user_id: '1',
+  language_id: '2'
+)
+UserLanguage.create!(
+  user_id: '1',
+  language_id: '3'
+)
+UserLanguage.create!(
+  user_id: '1',
+  language_id: '4'
 )
 
 # 質問内容を追加
