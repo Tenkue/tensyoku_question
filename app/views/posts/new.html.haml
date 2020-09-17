@@ -24,6 +24,7 @@
                   = q.label{ q.text }
           .field
             = f.label :コメント, class: "field_name"
-            = f.text_field :text
+            .field_textarea
+              = f.text_area :text
           .submit
             = f.submit

@@ -2,18 +2,18 @@
   &_postcontent {
     height: auto;
     width: 50%;
-    background-color: white;
     margin: 0 auto;
     margin-top: 50px;
     padding-bottom: 50px;
+    background-color: white;
     h1 {
+      height: auto;
+      width: auto;
+      padding-top: 30px;
+      padding-bottom: 40px;
       font-size: 30px;
       font-weight: bold;
       text-align: center;
-      padding-top: 30px;
-      padding-bottom: 40px;
-      height: auto;
-      width: auto;
     }
     &_form {
       height: 75%;
@@ -22,29 +22,29 @@
       .field {
         padding-top: 30px;
         &_name{
-          font-weight: bold;
           padding-right: 25px;
+          font-weight: bold;
         }
         select {
           height: 45px;
           width: 30%;
+          padding: 5px 10px;
           font-size: 15px;
+          color: #666;
           border: none;
           border: 2px solid #e9e9e9;
           border-radius:10px;
-          padding: 5px 10px;
-          color: #666;
         }
         &_date {
-          margin-left: 15px;
           height: 30px;
           width: 30%;
+          margin-left: 15px;
+          padding: 5px 10px;
           font-size: 15px;
+          color: #666;
           border: none;
           border: 2px solid #e9e9e9;
           border-radius:10px;
-          padding: 5px 10px;
-          color: #666;
         }
         &_question {
           padding-top: 15px;
@@ -53,16 +53,43 @@
             padding-bottom: 15px;
             line-height: 1.5;
             input {
-              cursor: pointer;
               display: block;
               float: left;
+              cursor: pointer;
             }
             label {
-              cursor: pointer;
               display: block;
-              overflow: hidden; /* モダンブラウザ用 */
+              overflow: hidden;
+              cursor: pointer;
               padding: 0 10px 0 20px;
             }
+            
+          }
+        }
+        &_textarea {
+          padding-top: 10px;
+          padding-left: 30px;
+          #post_text {
+            height: 100px;
+            width: 90%;
+            padding: 10px;
+          }
+        }
+      }
+      .submit {
+        padding-top: 30px;
+        text-align: center;
+        input {
+          height: 45px;
+          width: 200px;
+          background: #fff;
+          font-size: 15px;
+          font-weight: bold;
+          border: 2px solid #4d639f;
+          border-radius: 0;
+          &:hover {
+            background: #4d639f;
+            color: #fff;
           }
         }
       }
