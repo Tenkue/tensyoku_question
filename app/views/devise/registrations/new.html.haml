@@ -22,7 +22,7 @@
           .field
             = f.label :programing_language, class: "field_name"
             .field_checkbox
-              = f.collection_check_boxes :language_id, Language.all, :id, :programing_language, :include_blank => true
+              = f.collection_check_boxes(:language_ids, Language.all, :id, :programing_language, include_hidden: false)
           .field
             = f.label :method, class: "field_name"
             .field_selectbox
