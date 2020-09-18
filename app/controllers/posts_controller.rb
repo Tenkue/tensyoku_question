@@ -12,6 +12,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+      #チェックされた質問のカウントを一つ増やす
+      if @post.questions.count >= 0
+        @post.counter
+      end
       redirect_to root_path
     else
       render :new
