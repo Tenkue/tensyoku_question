@@ -26,42 +26,59 @@ User.create!(
   nickname: 'test-user',
   password: 'password',
   password_confirmation: 'password',
-  language_id: '4',
   learning_method_id:'1'
+)
+
+#テストユーザーの中間テーブルを作成
+UserLanguage.create!(
+  user_id: '1',
+  language_id: '1'
+)
+UserLanguage.create!(
+  user_id: '1',
+  language_id: '2'
+)
+UserLanguage.create!(
+  user_id: '1',
+  language_id: '3'
+)
+UserLanguage.create!(
+  user_id: '1',
+  language_id: '4'
 )
 
 # 質問内容を追加
 Question.create!([
-  {content: '自己紹介してください'},
-  {content: '逆に質問はありますか'},
-  {content: 'なぜ未経験からエンジニアを目指そうと思った のですか'},
-  {content: 'なぜ弊社を受けようと思ったのですか'},
-  {content: '希望年収を教えてください'},
-  {content: '将来のキャリアプランを教えてください'},
-  {content: '現職（前職）を退社しようと思う理由を教えてください'},
-  {content: '現職（前職）の仕事内容を教えてください'},
-  {content: '就職活動の軸はなんですか'},
-  {content: '将来はエンジニアを極めたい？それともマネジメントやPMなどになりたいですか？その理由も'},
-  {content: '現職（前職）で一番頑張った / 結果を残した仕事のエピソードを教えてください'},
-  {content: 'あなたの強みを教えて下さい'},
-  {content: 'ポートフォリオの説明をしてください（工夫点も含め）'},
-  {content: 'どうしてバックエンド（フロントならフロント）を選びましたか'},
-  {content: '独学（スクール）ではどのようなに勉強をしてきましたか'},
-  {content: 'なぜいま勉強している言語/フレームを選んだのですか？'},
-  {content: '現職（前職）に入社した理由を教えて下さい'},
-  {content: '既に退職した人は）なぜ前職を退職したのか教えて下さい'},
-  {content: 'エラーが出た時の調べ方、解決方法は？'},
-  {content: 'バックエンド（フロント）以外もやってもらうけど、大丈夫ですか？'},
-  {content: 'いままで勉強していて難しかったことを教えて下さい'},
-  {content: '現職（前職）で一番苦労したエピソードを教えて'},
-  {content: 'どんなプロダクトをつくりたいですか？'},
-  {content: 'あなたの弱みを教えて下さい'},
-  {content: 'どのような人材になりたいですか？'},
-  {content: '転職先（弊社）で貢献できることはなんですか？'},
-  {content: '友人や周り(友人・家族)からどんな性格って言われる？'},
-  {content: '自分で調べて解決しない時の見切りの付け方は？'},
-  {content: '前職あるいは現職において貢献したことはなんですか？'},
-  {content: 'これまでの一番の成功体験'},
+  {content: '自己紹介してください', counter: '30'} ,
+  {content: '逆に質問はありますか', counter: '28'},
+  {content: 'なぜ未経験からエンジニアを目指そうと思ったのですか', counter: '27'},
+  {content: 'なぜ弊社を受けようと思ったのですか', counter: '27'},
+  {content: '希望年収を教えてください', counter: '26'},
+  {content: '将来のキャリアプランを教えてください', counter: '24'},
+  {content: '現職（前職）を退社しようと思う理由を教えてください', counter: '21'},
+  {content: '現職（前職）の仕事内容を教えてください', counter: '17'},
+  {content: '就職活動の軸はなんですか', counter: '16'},
+  {content: '将来はエンジニアを極めたい？それともマネジメントやPMなどになりたいですか？その理由も', counter: '14'},
+  {content: '現職（前職）で一番頑張った / 結果を残した仕事のエピソードを教えてください', counter: '13'},
+  {content: 'あなたの強みを教えて下さい', counter: '13'},
+  {content: 'ポートフォリオの説明をしてください（工夫点も含め）', counter: '13'},
+  {content: 'どうしてバックエンド（フロントならフロント）を選びましたか', counter: '12'},
+  {content: '独学（スクール）ではどのようなに勉強をしてきましたか', counter: '11'},
+  {content: 'なぜいま勉強している言語/フレームを選んだのですか？', counter: '11'},
+  {content: '現職（前職）に入社した理由を教えて下さい', counter: '11'},
+  {content: '既に退職した人は）なぜ前職を退職したのか教えて下さい', counter: '8'},
+  {content: 'エラーが出た時の調べ方、解決方法は？', counter: '8'},
+  {content: 'バックエンド（フロント）以外もやってもらうけど、大丈夫ですか？', counter: '8'},
+  {content: 'いままで勉強していて難しかったことを教えて下さい', counter: '8'},
+  {content: '現職（前職）で一番苦労したエピソードを教えて', counter: '8'},
+  {content: 'どんなプロダクトをつくりたいですか？', counter: '7'},
+  {content: 'あなたの弱みを教えて下さい', counter: '7'},
+  {content: 'どのような人材になりたいですか？', counter: '6'},
+  {content: '転職先（弊社）で貢献できることはなんですか？', counter: '6'},
+  {content: '友人や周り(友人・家族)からどんな性格って言われる？', counter: '6'},
+  {content: '自分で調べて解決しない時の見切りの付け方は？', counter: '4'},
+  {content: '前職あるいは現職において貢献したことはなんですか？', counter: '4'},
+  {content: 'これまでの一番の成功体験', counter: '4'},
 ])
 
 # 業務形態作成

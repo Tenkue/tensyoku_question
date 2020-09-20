@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_28_192747) do
+ActiveRecord::Schema.define(version: 2020_09_15_222631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,18 +58,25 @@ ActiveRecord::Schema.define(version: 2020_08_28_192747) do
     t.string "business_form"
   end
 
+  create_table "user_languages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_user_languages_on_language_id"
+    t.index ["user_id"], name: "index_user_languages_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "image"
     t.string "encrypted_password", default: "", null: false
-    t.bigint "language_id"
     t.bigint "learning_method_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["language_id"], name: "index_users_on_language_id"
     t.index ["learning_method_id"], name: "index_users_on_learning_method_id"
   end
 
@@ -78,6 +85,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_192747) do
   add_foreign_key "posts", "places"
   add_foreign_key "posts", "styles"
   add_foreign_key "posts", "users"
-  add_foreign_key "users", "languages"
+  add_foreign_key "user_languages", "languages"
+  add_foreign_key "user_languages", "users"
   add_foreign_key "users", "learning_methods"
 end

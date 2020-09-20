@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show,:edit,:update,:destroy]
+  #登校一覧
+  def index
+    @posts = Post.all
+  end
   #新規投稿
   def new
     @post = Post.new
@@ -8,6 +12,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+      #チェックされた質問のカウントを一つ増やす
+      @post.counter
       redirect_to root_path
     else
       render :new
@@ -23,9 +29,17 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update(post_params)
+      redirect_to  post_path(@post), notice:"投稿内容を編集しました！"
+    else
+      render :edit
+    end
   end
 #投稿削除
   def destroy
+    @post.destroy
+    flash[:success] = '投稿を削除しました！'
+    redirect_to root_path
   end
 
   private

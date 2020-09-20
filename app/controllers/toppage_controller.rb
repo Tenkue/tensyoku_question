@@ -1,5 +1,5 @@
 class ToppageController < ApplicationController
   def index
-    @user = User.all
+    @questions = Question.order("counter DESC")
   end
 end

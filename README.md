@@ -31,4 +31,4 @@
 
 ## ER 図
 
-<img width="567" alt="ER?" src="https://user-images.githubusercontent.com/50095754/90325995-aba8c980-dfbd-11ea-97c1-4bfb562016d3.png">
+<img width="567" alt="ER?" src="https://user-images.githubusercontent.com/50095754/93402025-9544a500-f8be-11ea-8033-aab29549e886.png">

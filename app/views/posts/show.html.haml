@@ -17,4 +17,4 @@
 = @post.text
 
 = link_to "編集", edit_post_path
-= link_to "削除"
+= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除していいですか？' }
