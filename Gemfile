@@ -65,9 +65,8 @@ gem 'haml-rails'
 gem 'devise'
 
 gem 'rails-i18n', '~> 5.1'
-<<<<<<< HEAD
 
 gem 'carrierwave'
-=======
+
 gem 'pry-rails'
->>>>>>> origin/master
+
