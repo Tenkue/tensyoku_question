@@ -5,4 +5,21 @@
     = image_tag "/assets/default.jpg", :size => '100x100'
   %button.btn.btn-outline-secondary.rounded-pill{:type => "button"}
     = f.file_field :image, accept: 'image/jpeg,image/gif,image/png'
+
+= form_with model: @user, url: "/users/#{@user.id}", method: :patch, local: true do |f|
+  .field
+    = f.label :nickname, class: "field_name"
+    = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field_text"
+  .field
+    = f.label :programing_language, class: "field_name"
+    .field_checkbox
+      = f.collection_check_boxes(:language_ids, Language.all, :id, :programing_language, include_hidden: false)
+  .field
+    = f.label :method, class: "field_name"
+    .field_selectbox
+      = f.collection_select :learning_method_id, LearningMethod.all, :id, :method, :include_blank => true
+  .field
+    アイコン(仮置き)
+  .actions
+
   　　#{f.submit '更新する', class: 'btn btn-primary'}
