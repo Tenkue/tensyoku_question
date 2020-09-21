@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: パスワードを保存する
+        programing_language: 学習言語
+        method: 学習方法

@@ -7,7 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
-    @language = @user.build_language
     @learning_method = @user.build_learning_method
   end
 

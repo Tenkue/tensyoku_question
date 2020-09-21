@@ -1,0 +1,24 @@
+%body
+  %header
+    -# 後日、topページで使用しているヘッダー部分を部分テンプレート化してはめ込みます
+  .main
+    .devise_content
+      %h2 Log in
+      .devise_content_form
+        = form_with( model:@user, url: session_path(resource_name)) do |f|
+          .field
+            = f.label :nickname, class: "field_name"
+            %br/
+            = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field_text"
+          .field
+            = f.label :password, class: "field_name"
+            %br/
+            = f.password_field :password, autocomplete: "current-password", class: "field_text"
+          - if devise_mapping.rememberable?
+            .field_check
+              = f.check_box :remember_me, class: "check_box"
+              = f.label :remember_me, class: "check_name"
+          .actions
+            = f.submit "Log in", class: "actions_btn"
+        .devise_content_form_links_singin
+          = render "devise/shared/links"
