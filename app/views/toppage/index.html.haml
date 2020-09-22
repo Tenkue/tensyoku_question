@@ -30,62 +30,15 @@
           .select_item
             大阪
     .post_total
-      投稿総件数　○　件
+      投稿総件数 #{@questions.count} 件
     .question_answer
       %table
         %tr
           %th 順位
           %th 質問内容
           %th 件数
-        %tr
-          %td ◯位
-          %td 自己紹介をしてください
-          %td ◯件
-        %tr
-          %td ◯位
-          %td 年収希望はありますか
-          %td ◯件
-        %tr
-          %td ◯位
-          %td 逆質問はありますか
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
-        %tr
-          %td ◯位
-          %td ほげほげ
-          %td ◯件
+        - @questions.each.with_index(1) do |question, i|
+          %tr
+            %td #{i} 位
+            %td #{question.content}
+            %td #{question.counter}件
