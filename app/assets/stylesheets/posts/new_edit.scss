@@ -6,6 +6,7 @@
     margin-top: 50px;
     padding-bottom: 50px;
     background-color: white;
+
     h1 {
       height: auto;
       width: auto;
@@ -15,16 +16,20 @@
       font-weight: bold;
       text-align: center;
     }
+
     &_form {
       height: 75%;
       width: 80%;
       margin: 0 auto;
+
       .field {
         padding-top: 30px;
-        &_name{
+
+        &_name {
           padding-right: 25px;
           font-weight: bold;
         }
+
         select {
           height: 45px;
           width: 30%;
@@ -33,8 +38,9 @@
           color: #666;
           border: none;
           border: 2px solid #e9e9e9;
-          border-radius:10px;
+          border-radius: 10px;
         }
+
         &_date {
           height: 30px;
           width: 30%;
@@ -44,31 +50,37 @@
           color: #666;
           border: none;
           border: 2px solid #e9e9e9;
-          border-radius:10px;
+          border-radius: 10px;
         }
+
         &_question {
           padding-top: 15px;
           padding-left: 15px;
+
           &_answer {
             padding-bottom: 15px;
             line-height: 1.5;
+
             input {
               display: block;
               float: left;
               cursor: pointer;
             }
+
             label {
               display: block;
               overflow: hidden;
               cursor: pointer;
               padding: 0 10px 0 20px;
             }
-            
+
           }
         }
+
         &_textarea {
           padding-top: 10px;
           padding-left: 30px;
+
           #post_text {
             height: 100px;
             width: 90%;
@@ -76,9 +88,11 @@
           }
         }
       }
+
       .submit {
         padding-top: 30px;
         text-align: center;
+
         input {
           height: 45px;
           width: 200px;
@@ -87,6 +101,7 @@
           font-weight: bold;
           border: 2px solid #4d639f;
           border-radius: 0;
+
           &:hover {
             background: #4d639f;
             color: #fff;
@@ -95,4 +110,35 @@
       }
     }
   }
+}
+
+// paginate
+.pagination {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pagination span {
+  background-color: rgba(158, 158, 158, 0.4);
+  text-align: center;
+  width: 50px;
+  border: solid 1px #344963;
+  color: rgb(197, 20, 159);
+  transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.pagination span:hover {
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.pagination span a:hover {
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
