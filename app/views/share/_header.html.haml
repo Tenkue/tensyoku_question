@@ -1,0 +1,21 @@
+.info
+  .info_logo
+    = image_tag 'logo.jpg', class: "info_logo_image"
+  - if user_signed_in?
+    .info_name
+      こんにちは、#{current_user.nickname}さん
+%ul
+  - if user_signed_in?
+    %li
+      = link_to "新規投稿", new_post_path
+    %li
+      = link_to "投稿一覧", posts_path
+    %li
+      = link_to "マイページ", user_path(current_user.id)
+    %li
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+  - else
+    %li
+      = link_to "新規登録", new_user_registration_path
+    %li
+      = link_to "ログイン", new_user_session_path

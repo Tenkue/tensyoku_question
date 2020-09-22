@@ -3,51 +3,6 @@ body {
   width: 100%;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  top: 0px;
-  left: 0px;
-  position: fixed;
-  height: 130px;
-  width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 0 white;
-  background-color: #4d639f;
-  color: white;
-  .info {
-    display: flex;
-    height: 100%;
-    width: 500px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 70px;
-    &_logo{
-      height: 110px;
-      width: 110px;
-      &_image{
-        height: 110px;
-        width: 110px;
-      }
-    }
-    &_name {
-      padding-left: 50px;
-      font-size: 15px;
-      line-height: 110px;
-    }
-  }
-  ul {
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    width: 350px;
-    line-height: 120px;
-    padding-right: 70px;
-    list-style: none;
-    font-size: 19px;
-  }
-}
-
 .main {
   background-color: #c9ced1;
   min-height:100vh;
