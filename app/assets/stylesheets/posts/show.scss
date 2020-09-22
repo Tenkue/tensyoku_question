@@ -1,0 +1,25 @@
+.main{
+  margin: 0 auto;
+  &_postcontent_show {
+    background-color: white;
+    height: auto;
+    width: 75%;
+    margin: 0 auto;
+    padding: 50px;
+    margin-top: 60px;
+    h1 {
+      height: auto;
+      width: auto;
+      padding-top: 30px;
+      padding-bottom: 40px;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &_form {
+      height: auto;
+      width: 100%;
+      background-color: yellow;
+    }
+  }
+}

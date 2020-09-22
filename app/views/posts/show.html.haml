@@ -1,20 +1,25 @@
-%h1 投稿詳細画面
+%body
+  %header
+    =  render 'share/header'
+  .main
+    .main_postcontent_show
+      %h1 投稿詳細画面
+      .main_postcontent_show_form
+        %h2 面接日
+        = @post.interview_date
 
-%h2 面接日
-= @post.interview_date
+        %h2 業務形態
+        = @style.business_form
 
-%h2 業務形態
-= @style.business_form
+        %h2 勤務地域
+        = @place.work_location
 
-%h2 勤務地域
-= @place.work_location
+        %h2 質問内容
+        - @post.questions.each do |quesion|
+          = quesion.content
 
-%h2 質問内容
-- @post.questions.each do |quesion|
-  = quesion.content
+        %h2 コメント
+        = @post.text
 
-%h2 コメント
-= @post.text
-
-= link_to "編集", edit_post_path
-= link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除していいですか？' }
+        = link_to "編集", edit_post_path
+        = link_to "削除", post_path(@post.id), method: :delete, data: { confirm: '本当に削除していいですか？' }
