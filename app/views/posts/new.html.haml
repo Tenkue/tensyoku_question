@@ -1,2 +1,8 @@
-%h1 新規投稿
-= render 'form'
+%body
+  %header
+    -# 後日、topページで使用しているヘッダー部分を部分テンプレート化してはめ込みます
+  .main
+    .main_postcontent
+      %h1 新規投稿
+      = render 'form'
+
