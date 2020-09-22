@@ -70,3 +70,5 @@ gem 'carrierwave'
 
 gem 'pry-rails'
 
+gem 'kaminari'
+

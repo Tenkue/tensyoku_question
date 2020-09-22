@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   has_many :post_questions, dependent: :destroy
   has_many :questions, through: :post_questions
 
+  paginates_per 5
+
   #質問のカウントを1増やす仕組み
   def counter
     self.questions.each do |question|
