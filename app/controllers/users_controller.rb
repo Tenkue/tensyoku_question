@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show]
   def show
-    @learning_method = LearningMethod.find(@user.learning_method_id)
   end
 
   def edit
