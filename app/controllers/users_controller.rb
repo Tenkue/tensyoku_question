@@ -1,11 +1,26 @@
 class UsersController < ApplicationController
+  before_action :find_user, only: [:show]
   def show
-    @user = User.find(params[:id])
+    @learning_method = LearningMethod.find(@user.learning_method_id)
   end
 
   def edit
   end
 
   def update
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(
+      :nickname,
+      :age,
+      :image,
+      :learning_method_id,
+      language_ids: [])
+  end
+
+  def find_user
+    @user = User.find(params[:id])
   end
 end
