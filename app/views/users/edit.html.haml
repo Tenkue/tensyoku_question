@@ -1,4 +1,4 @@
-= form_with model: @user_path do |f|
+= form_with model: @user, local: true do |f|
   - if @user.image?
     = image_tag @user.image.url
   - else
@@ -6,7 +6,6 @@
   %button.btn.btn-outline-secondary.rounded-pill{:type => "button"}
     = f.file_field :image, accept: 'image/jpeg,image/gif,image/png'
 
-= form_with model: @user, url: "/users/#{@user.id}", method: :patch, local: true do |f|
   .field
     = f.label :nickname, class: "field_name"
     = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field_text"
