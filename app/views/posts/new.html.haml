@@ -1,31 +1,8 @@
 %body
   %header
-    -# 後日、topページで使用しているヘッダー部分を部分テンプレート化してはめ込みます
+    = render 'share/header'
   .main
     .main_postcontent
       %h1 新規投稿
-      .main_postcontent_form
-        = form_with model:@post, local: true do |f|
-          .field
-            = f.label :業務形態, class: "field_name"
-            = f.collection_select :style_id, Style.all, :id, :business_form, :include_blank => true
-          .field
-            = f.label :勤務地域, class: "field_name"
-            = f.collection_select :place_id, Place.all, :id, :work_location, :include_blank => true 
-          .field
-            = f.label :面接日, class: "field_name"
-            = f.date_field  :interview_date, class: "field_date"
-          .field
-            = f.label :質問内容, class: "field_name"
-            .field_question
-              = f.collection_check_boxes(:question_ids, Question.all, :id, :content, include_hidden: false) do |q|
-                .field_question_answer
-                  = q.check_box
-                  = q.label{ q.text }
-          .field
-            = f.label :コメント, class: "field_name"
-            .field_textarea
-              = f.text_area :text
-          .submit
-            = f.submit
+      = render 'form'
 
