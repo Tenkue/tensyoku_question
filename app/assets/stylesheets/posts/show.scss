@@ -1,0 +1,133 @@
+.main{
+  margin: 0 auto;
+  &_postcontent_show {
+    background-color: white;
+    height: auto;
+    width: 65%;
+    margin: 0 auto;
+    padding: 50px;
+    margin-top: 60px;
+    h1 {
+      height: auto;
+      width: auto;
+      padding-top: 30px;
+      padding-bottom: 50px;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &_form {
+      height: auto;
+      width: 90%;
+      margin: 0 auto;
+      .title{
+        display: flex;
+        padding-bottom: 20px;
+        .label {
+          display: flex;
+          margin: 0 auto;
+          padding-bottom: 20px;
+          font-size: 18px;
+          height: 20px;
+          width: auto;
+          h2 {
+            height: 20px;
+            width: 90px;
+            margin: 5px;
+            padding: 6px;
+            border: 1px solid #95ccff;
+            background-color: #95ccff;
+            color: white;
+            border-radius: 15px;  
+            text-align: center;
+          }
+          &_text {
+            margin-top: 13px;
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .question {
+        font-size: 18px;
+        position: relative;
+        margin: 15px 0;
+        padding: 35px 10px 10px 20px;
+        border: solid 2px #95ccff;
+        h2 {
+          position: absolute;
+          display: inline-block;
+          top: -2px;
+          left: -2px;
+          padding: 0 9px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 17px;
+          background: #95ccff;
+          color: #ffffff;
+          font-weight: bold;
+        }
+        &_text {
+          display: flex;
+          padding-left: 10px;
+          padding-bottom: 10px;
+          i {
+            padding-right: 10px;
+          }
+        }
+      }
+      .comment {
+        font-size: 18px;
+        position: relative;
+        margin: 15px 0;
+        padding: 25px 10px 10px 20px;
+        border: solid 2px #95ccff;
+        h2 {
+          position: absolute;
+          display: inline-block;
+          top: -2px;
+          left: -2px;
+          padding: 0 9px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 17px;
+          background: #95ccff;
+          color: #ffffff;
+          font-weight: bold;
+        }
+        &_text {
+          padding-left: 10px;
+          padding-bottom: 10px;
+          white-space: pre-wrap;
+        }
+      }
+      .actions {
+        padding-top: 30px;
+        text-align: center;
+        height: auto;
+        width: 50%;
+        display: flex;
+        margin: 0 auto;
+        a {
+          display: block;
+          text-decoration: none;
+          line-height: 45px;
+          height: 45px;
+          width: 200px;
+          border: 2px solid #4d639f;
+          border-radius: 0;
+          background: #fff;
+          font-size: 20px;
+          font-weight: bold;
+          color: black;
+          margin-left: 20px;
+          margin-right: 10px;
+          &:hover {
+            background: #4d639f;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

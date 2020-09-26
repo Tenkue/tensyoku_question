@@ -71,4 +71,5 @@ gem 'carrierwave'
 gem 'pry-rails'
 
 gem 'kaminari'
+gem 'font-awesome-sass', '~> 5.4.1'
 
