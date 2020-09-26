@@ -1,28 +1,31 @@
-%h1 ユーザー詳細
-
-= @user.nickname
-
-%h2 学習言語
-- @user.languages.each do |language|
-  = language.programing_language
-
-%h2 学習方法
-= @user.learning_method.method
-
-- @user.posts.each do |post|
-  %h2 投稿日:
-  = post.interview_date
-  %br/
-
-  %h2 業務形態
-  = post.style.business_form
-  %br/
-
-  %h2 勤務地域
-  = post.place.work_location
-  %br/
-
-  - post.questions.each do |question|
-    %li
-      = question.content
+%body
+  %header
+    =  render 'share/header'
+  .main
+    .user
+      .user_content
+        .user_content_image
+          画像
+        .user_content_info
+          .nickname
+            = @user.nickname
+          .language
+            %h2 学習言語
+            - @user.languages.each do |language|
+              = language.programing_language
+          .stady
+            %h2 学習方法
+            = @user.learning_method.method
+      .post_content
+        - @user.posts.each do |post|
+          %h2 投稿日:
+          = post.interview_date
+          %h2 業務形態
+          = post.style.business_form
+          %h2 勤務地域
+          = post.place.work_location
+          %br/
+          - post.questions.each do |question|
+            %li
+              = question.content
 

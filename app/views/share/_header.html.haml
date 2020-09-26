@@ -5,11 +5,31 @@
     .info_name
       こんにちは、#{current_user.nickname}さん
 %ul
-  - if user_signed_in?
+  - if user_signed_in? && current_page?(current_user)
     %li
       = link_to "新規投稿", new_post_path
     %li
       = link_to "投稿一覧", posts_path
+    %li
+      = link_to "トップページ", toppage_index_path
+    %li
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+  - elsif user_signed_in? && current_page?(root_path)||current_page?(toppage_index_path)
+    %li
+      = link_to "新規投稿", new_post_path
+    %li
+      = link_to "投稿一覧", posts_path
+    %li
+      = link_to "マイページ", user_path(current_user.id)
+    %li
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+  - elsif user_signed_in? 
+    %li
+      = link_to "新規投稿", new_post_path
+    %li
+      = link_to "投稿一覧", posts_path
+    %li
+      = link_to "トップページ", toppage_index_path
     %li
       = link_to "マイページ", user_path(current_user.id)
     %li
