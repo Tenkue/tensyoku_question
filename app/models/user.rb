@@ -5,4 +5,5 @@ class User < ApplicationRecord
   belongs_to :learning_method
   devise :database_authenticatable, :recoverable, :rememberable,:registerable, :authentication_keys => [:nickname]
   accepts_nested_attributes_for :learning_method
+  mount_uploader :image, ImageUploader
 end

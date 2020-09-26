@@ -65,6 +65,11 @@ gem 'haml-rails'
 gem 'devise'
 
 gem 'rails-i18n', '~> 5.1'
+
+gem 'carrierwave'
+
 gem 'pry-rails'
+
 gem 'kaminari'
 gem 'font-awesome-sass', '~> 5.4.1'
+
