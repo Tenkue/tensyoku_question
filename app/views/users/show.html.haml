@@ -2,30 +2,42 @@
   %header
     =  render 'share/header'
   .main
-    .user
-      .user_content
-        .user_content_image
+    .content
+      .content_info
+        .content_info_image
           画像
-        .user_content_info
+        .content_info_user
           .nickname
             = @user.nickname
-          .language
+          .label
             %h2 学習言語
-            - @user.languages.each do |language|
-              = language.programing_language
-          .stady
+            .label_stile
+              - @user.languages.each do |language|
+                = language.programing_language
+          .label
             %h2 学習方法
-            = @user.learning_method.method
-      .post_content
-        - @user.posts.each do |post|
-          %h2 投稿日:
-          = post.interview_date
-          %h2 業務形態
-          = post.style.business_form
-          %h2 勤務地域
-          = post.place.work_location
-          %br/
-          - post.questions.each do |question|
-            %li
-              = question.content
+            .label_stile
+              = @user.learning_method.method
+        .action
+          = link_to "ユーザー情報編集", "#", class:"action_btn"
+      .content_posts
+        %h2 投稿一覧
+        .post
+          .post_content
+            - @user.posts.each do |post|
+              .post_content_name
+                業務形態
+              .post_content_stile
+                = post.style.business_form
+              .post_content_name
+                勤務地域
+              .post_content_stile
+                = post.place.work_location
+              .post_content_date
+                投稿日:
+              .post_content_day
+                = post.interview_date
+          .post_btn
+            詳細
+
 
