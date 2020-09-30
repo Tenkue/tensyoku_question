@@ -23,21 +23,27 @@
       .content_posts
         %h2 投稿一覧
         .post
-          .post_content
-            - @user.posts.each do |post|
-              .post_content_name
+          %table
+            %tr
+              %th
+              %th
+                投稿日
+              %th
                 業務形態
-              .post_content_stile
-                = post.style.business_form
-              .post_content_name
+              %th
                 勤務地域
-              .post_content_stile
-                = post.place.work_location
-              .post_content_date
-                投稿日:
-              .post_content_day
-                = post.interview_date
-          .post_btn
-            詳細
+            - @user.posts.each do |post|
+              %tr
+                %td.btn
+                  = link_to "/posts/#{post.id}", class:"btn_link" do
+                    = icon("far", "fas fa-file")
+                    詳細
+                %td
+                  = post.interview_date
+                %td
+                  = post.style.business_form
+                %td
+                  = post.place.work_location
+
 
 
