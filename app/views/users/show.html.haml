@@ -24,26 +24,28 @@
         %h2 投稿一覧
         .post
           %table
-            %tr
-              %th
-              %th
-                投稿日
-              %th
-                業務形態
-              %th
-                勤務地域
-            - @user.posts.each do |post|
+            %thead
               %tr
-                %td.btn
-                  = link_to "/posts/#{post.id}", class:"btn_link" do
-                    = icon("far", "fas fa-file")
-                    詳細
-                %td
-                  = post.interview_date
-                %td
-                  = post.style.business_form
-                %td
-                  = post.place.work_location
+                %th
+                %th
+                  投稿日
+                %th
+                  業務形態
+                %th
+                  勤務地域
+            %tbody
+              - @user.posts.each do |post|
+                %tr
+                  %td.btn
+                    = link_to "/posts/#{post.id}", class:"btn_link" do
+                      = icon("far", "fas fa-file")
+                      詳細
+                  %td
+                    = post.interview_date
+                  %td
+                    = post.style.business_form
+                  %td
+                    = post.place.work_location
 
 
 
