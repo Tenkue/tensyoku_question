@@ -1,6 +1,11 @@
 %h1 ユーザー詳細
 
 = @user.nickname
+= form_with model: @user, local: true do |f|
+  - if @user.image?
+    = image_tag @user.image.url
+  - else
+    = image_tag "/assets/default.jpg", :size => '100x100'
 
 %h2 学習言語
 - @user.languages.each do |language|
@@ -26,3 +31,5 @@
     %li
       = question.content
 
+= link_to "編集画面" ,edit_user_path
+= link_to "トップページへ" ,root_path
