@@ -1,35 +1,52 @@
-%h1 ユーザー詳細
-
-= @user.nickname
-= form_with model: @user, local: true do |f|
-  - if @user.image?
-    = image_tag @user.image.url
-  - else
-    = image_tag "/assets/default.jpg", :size => '100x100'
-
-%h2 学習言語
-- @user.languages.each do |language|
-  = language.programing_language
-
-%h2 学習方法
-= @user.learning_method.method
-
-- @user.posts.each do |post|
-  %h2 投稿日:
-  = post.interview_date
-  %br/
-
-  %h2 業務形態
-  = post.style.business_form
-  %br/
-
-  %h2 勤務地域
-  = post.place.work_location
-  %br/
-
-  - post.questions.each do |question|
-    %li
-      = question.content
-
-= link_to "編集画面" ,edit_user_path
-= link_to "トップページへ" ,root_path
+%body
+  %header
+    =  render 'share/header'
+  .main
+    .content
+      .content_info
+        .content_info_image
+          = form_with model: @user, local: true do |f|
+            - if @user.image?
+              = image_tag @user.image.url
+            - else
+              = image_tag "/assets/default.jpg", :size => '100x100'
+        .content_info_user
+          .nickname
+            = @user.nickname
+          .label
+            %h2 学習言語
+            .label_stile
+              - @user.languages.each do |language|
+                = language.programing_language
+          .label
+            %h2 学習方法
+            .label_stile
+              = @user.learning_method.method
+        .action
+          = link_to "ユーザー情報編集", edit_user_path, class:"action_btn"
+      .content_posts
+        %h2 投稿一覧
+        .post
+          %table
+            %thead
+              %tr
+                %th
+                %th
+                  投稿日
+                %th
+                  業務形態
+                %th
+                  勤務地域
+            %tbody
+              - @user.posts.each do |post|
+                %tr
+                  %td.btn
+                    = link_to "/posts/#{post.id}", class:"btn_link" do
+                      = icon("far", "fas fa-file")
+                      詳細
+                  %td
+                    = post.interview_date
+                  %td
+                    = post.style.business_form
+                  %td
+                    = post.place.work_location
