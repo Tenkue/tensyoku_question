@@ -5,7 +5,11 @@
     .content
       .content_info
         .content_info_image
-          画像
+          = form_with model: @user, local: true do |f|
+            - if @user.image?
+              = image_tag @user.image.url
+            - else
+              = image_tag "/assets/default.jpg", :size => '100x100'
         .content_info_user
           .nickname
             = @user.nickname
@@ -46,6 +50,3 @@
                     = post.style.business_form
                   %td
                     = post.place.work_location
-
-
-
