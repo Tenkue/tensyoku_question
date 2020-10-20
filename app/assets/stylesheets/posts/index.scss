@@ -1,0 +1,30 @@
+.main {
+  .postindex {
+    height: 80%;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: white;
+    h1 {
+      height: auto;
+      width: auto;
+      padding-top: 30px;
+      padding-bottom: 50px;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &_posts{
+
+      .post{
+        margin: 0 auto;
+        .post_user {
+          display: flex;
+          background-color: yellow;
+          height: 30px;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
