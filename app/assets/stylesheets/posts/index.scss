@@ -8,21 +8,38 @@
     h1 {
       height: auto;
       width: auto;
-      padding-top: 30px;
+      padding-top: 40px;
       padding-bottom: 50px;
       font-size: 30px;
       font-weight: bold;
       text-align: center;
     }
     &_posts{
-
       .post{
+        height: 100%;
+        width: 80%;
         margin: 0 auto;
+        margin-bottom: 20px;
+        border: solid 1px grey;
         .post_user {
           display: flex;
+          height: 50px;
+          line-height: 50px;
           background-color: yellow;
-          height: 30px;
-          width: 80%;
+          border-bottom: solid 1px grey;
+          padding: 5px;
+          &_image {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background-color: grey;
+            text-align: center;
+            margin-left: 10px;
+          }
+          &_name {
+            padding-left: 30px;
+            font-weight: bold;
+          }
         }
       }
     }
