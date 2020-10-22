@@ -13,19 +13,29 @@
               .post_user_name
                 投稿者:
                 = post.user.nickname
-            .post_content
-              %h2 投稿日:
-              = post.interview_date
-              %h2 業務形態
-              = post.style.business_form
-              %br/
-
-              %h2 勤務地域
-              = post.place.work_location
-              %br/
-
-              - post.questions.each do |question|
-                %li
-                  = question.content
+            .post_contents
+              .post_contents_content
+                .post_contents_content_info
+                  .label
+                    投稿日
+                  .post_contents_content_info_text
+                    = post.interview_date
+                .post_contents_content_info
+                  .label
+                    業務形態
+                  .post_contents_content_info_text
+                    = post.style.business_form
+                .post_contents_content_info
+                  .label
+                    勤務地域
+                  .post_contents_content_info_text
+                    = post.place.work_location
+              .post_content_questions
+                .label
+                  【　質問内容　】
+                .post_content_questions_question
+                  - post.questions.each do |question|
+                    .post_content_questions_question_text
+                      = question.content
 
         = paginate @posts

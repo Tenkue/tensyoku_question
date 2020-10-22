@@ -41,6 +41,34 @@
             font-weight: bold;
           }
         }
+        .post_contents{
+          margin: 20px;
+          &_content {
+            display: flex;
+            &_info {
+              height: 50px;
+              display: flex;
+              .label {
+                height: 20px;
+                width: 90px;
+                margin: 5px;
+                padding: 6px;
+                border: 1px solid #95ccff;
+                background-color: #95ccff;
+                color: white;
+                border-radius: 15px;  
+                text-align: center;
+                line-height: 20px;
+              }
+              &_text {
+                padding-left: 15px;
+                padding-right: 30px;
+                line-height: 45px;
+              }
+            }
+          }
+          
+        }
       }
     }
   }
