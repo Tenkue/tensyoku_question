@@ -30,12 +30,15 @@
                     勤務地域
                   .post_contents_content_info_text
                     = post.place.work_location
-              .post_content_questions
+              .post_contents_questions
                 .label
-                  【　質問内容　】
-                .post_content_questions_question
-                  - post.questions.each do |question|
-                    .post_content_questions_question_text
-                      = question.content
-
+                  質問内容
+                - post.questions.each do |question|
+                  .post_content_questions_question
+                    = icon("far", "far fa-check-square")
+                    = question.content
+            .post_info
+              = link_to "/posts/#{post.id}", class:"post_info_link" do
+                = icon("fas", "fas fa-arrow-circle-right")
+                詳細を確認する
         = paginate @posts
