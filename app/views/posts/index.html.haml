@@ -9,6 +9,7 @@
           .post
             .post_user
               .post_user_image
+                /あとで画像組み込み
                 画像
               .post_user_name
                 投稿者:
@@ -34,11 +35,12 @@
                 .label
                   質問内容
                 - post.questions.each do |question|
-                  .post_content_questions_question
+                  .question
                     = icon("far", "far fa-check-square")
                     = question.content
             .post_info
-              = link_to "/posts/#{post.id}", class:"post_info_link" do
+              = link_to "/posts/#{post.id}" do
                 = icon("fas", "fas fa-arrow-circle-right")
                 詳細を確認する
+      .paginate
         = paginate @posts
