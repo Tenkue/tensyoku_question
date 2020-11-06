@@ -10,6 +10,7 @@ header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 0 white;
   background-color: #4d639f;
+  z-index: 100;
   color: white;
   .info {
     display: flex;

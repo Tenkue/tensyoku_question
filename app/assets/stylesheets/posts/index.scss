@@ -1,0 +1,129 @@
+.main {
+  .postindex {
+    height: 80%;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: white;
+    h1 {
+      height: auto;
+      width: auto;
+      padding-top: 40px;
+      padding-bottom: 50px;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &_posts{
+      .post{
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        border: solid 1px grey;
+        &_user {
+          display: flex;
+          height: 50px;
+          line-height: 50px;
+          background-color: #c9ced1;
+          border-bottom: solid 1px grey;
+          padding: 5px;
+          &_image {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background-color: grey;
+            text-align: center;
+            margin-left: 10px;
+          }
+          &_name {
+            padding-left: 30px;
+            font-weight: bold;
+          }
+        }
+        &_contents{
+          margin: 20px;
+          &_content {
+            display: flex;
+            &_info {
+              height: 50px;
+              display: flex;
+              .label {
+                height: 20px;
+                width: 90px;
+                margin: 5px;
+                padding: 6px;
+                border: 1px solid #95ccff;
+                background-color: #95ccff;
+                color: white;
+                border-radius: 15px;  
+                text-align: center;
+                line-height: 20px;
+              }
+              &_text {
+                padding-left: 15px;
+                padding-right: 30px;
+                line-height: 45px;
+              }
+            }
+          }
+          &_questions {
+            font-size: 18px;
+            position: relative;
+            margin: 15px 0;
+            padding: 35px 10px 10px 20px;
+            border: solid 2px #95ccff;
+            .label {
+              position: absolute;
+              display: inline-block;
+              height: 30px;
+              top: -2px;
+              left: -2px;
+              padding: 0 9px;
+              line-height: 30px;
+              font-size: 17px;
+              background: #95ccff;
+              color: #ffffff;
+              font-weight: bold;
+            }
+            .question {
+              display: flex;
+              padding-left: 10px;
+              padding-bottom: 10px;
+              i {
+                padding-right: 5px;
+              }
+            }
+          }
+        }
+        &_info {
+          height: 50px;
+          width: 190px;
+          margin: 0 auto;
+          padding-top: 15px;
+          margin-bottom: 25px;
+          a {
+            display: inline-block;
+            padding: 0.3em 1em;
+            text-decoration: none;
+            color: #4d639f;
+            border: solid 2px #4d639f;
+            border-radius: 3px;
+            transition: .4s;
+            line-height: 30px;
+            font-weight: bold;
+            color: black;
+            &:hover {
+              background: #4d639f;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .paginate {
+    padding-left: 150px;
+    padding-bottom: 30px;
+  }
+}

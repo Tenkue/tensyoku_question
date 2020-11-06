@@ -1,28 +1,46 @@
-
-%h1 投稿一覧
-%br/
-
-- @posts.each do |post|
-  %h2 投稿日:
-  = post.interview_date
-  %br/
-
-  / 画像を表示させるように仮置き
-
-  %h2 投稿者:
-  = post.user.nickname
-  %br/
-
-  %h2 業務形態
-  = post.style.business_form
-  %br/
-
-  %h2 勤務地域
-  = post.place.work_location
-  %br/
-
-  - post.questions.each do |question|
-    %li
-      = question.content
-
-= paginate @posts
+%body
+  %header
+    = render 'share/header'
+  .main
+    .postindex
+      %h1 投稿一覧
+      .postindex_posts
+        - @posts.each do |post|
+          .post
+            .post_user
+              .post_user_image
+                /あとで画像組み込み
+                画像
+              .post_user_name
+                投稿者:
+                = post.user.nickname
+            .post_contents
+              .post_contents_content
+                .post_contents_content_info
+                  .label
+                    投稿日
+                  .post_contents_content_info_text
+                    = post.interview_date
+                .post_contents_content_info
+                  .label
+                    業務形態
+                  .post_contents_content_info_text
+                    = post.style.business_form
+                .post_contents_content_info
+                  .label
+                    勤務地域
+                  .post_contents_content_info_text
+                    = post.place.work_location
+              .post_contents_questions
+                .label
+                  質問内容
+                - post.questions.each do |question|
+                  .question
+                    = icon("far", "far fa-check-square")
+                    = question.content
+            .post_info
+              = link_to "/posts/#{post.id}" do
+                = icon("fas", "fas fa-arrow-circle-right")
+                詳細を確認する
+      .paginate
+        = paginate @posts
